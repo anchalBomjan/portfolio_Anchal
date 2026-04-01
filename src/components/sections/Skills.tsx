@@ -60,7 +60,7 @@ const SkillCard: FC<{ skill: Skill }> = ({ skill }) => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.9 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute bottom-full mb-3 w-max max-w-xs p-2 bg-secondary dark:bg-dark-secondary text-highlight dark:text-white text-xs rounded-lg shadow-lg z-10"
+                    className="absolute bottom-full mb-3 w-max max-w-[180px] sm:max-w-xs p-2 bg-secondary dark:bg-dark-secondary text-highlight dark:text-white text-xs rounded-lg shadow-lg z-10 left-1/2 -translate-x-1/2"
                 >
                     {skill.usage}
                 </motion.div>

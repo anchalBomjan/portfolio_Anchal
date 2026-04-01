@@ -25,7 +25,7 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({ children, id, classNam
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`py-20 md:py-28 ${className}`}
+            className={`py-12 sm:py-20 md:py-28 ${className}`}
         >
             {children}
         </motion.section>

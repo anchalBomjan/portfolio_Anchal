@@ -36,10 +36,10 @@ export const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }
                         >
                             <X size={24} />
                         </button>
-                        <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
-                        <div className="p-8">
-                             <div className="flex justify-between items-start gap-4 mb-4">
-                                <h2 className="text-3xl font-bold text-highlight dark:text-white">{project.title}</h2>
+                        <img src={project.image} alt={project.title} className="w-full h-40 sm:h-64 object-cover" />
+                        <div className="p-4 sm:p-8">
+                             <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4 mb-4">
+                                <h2 className="text-2xl sm:text-3xl font-bold text-highlight dark:text-white">{project.title}</h2>
                                 {project.link && (
                                     <motion.a
                                         href={project.link}
@@ -49,13 +49,13 @@ export const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        Acessar
+                                        Visit
                                         <ExternalLink size={16} />
                                     </motion.a>
                                 )}
                             </div>
                             <div className="mb-6">
-                                <h4 className="font-semibold text-accent dark:text-dark-accent mb-2">Tecnologias Utilizadas</h4>
+                                <h4 className="font-semibold text-accent dark:text-dark-accent mb-2">Technologies Used</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {project.stack.map(tech => (
                                         <span key={tech} className="bg-accent/20 text-accent dark:bg-dark-accent/20 dark:text-dark-accent text-sm font-semibold px-3 py-1 rounded-full">{tech}</span>
@@ -65,7 +65,7 @@ export const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }
                             <div className="space-y-4 text-secondary-text dark:text-dark-highlight text-lg">
                                 <p>{project.longDescription}</p>
                                 <div>
-                                    <h4 className="font-semibold text-accent dark:text-dark-accent mb-2">Resultados</h4>
+                                    <h4 className="font-semibold text-accent dark:text-dark-accent mb-2">Results</h4>
                                     <p>{project.results}</p>
                                 </div>
                             </div>

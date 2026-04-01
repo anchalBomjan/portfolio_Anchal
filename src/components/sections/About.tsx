@@ -12,8 +12,8 @@ const BadgeCard: FC<{ badge: typeof badges[0] }> = ({ badge }) => (
             <badge.icon className="text-5xl text-highlight dark:text-dark-highlight group-hover:text-white dark:group-hover:text-dark-background transition-colors duration-300" />
         </motion.div>
         <h4 className="mt-4 font-bold text-highlight dark:text-white">{badge.name}</h4>
-        <div className="absolute top-full mt-2 w-48 p-3 bg-secondary dark:bg-dark-secondary rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-            <p className="text-sm text-secondary-text dark:text-dark-highlight">{badge.description}</p>
+        <div className="absolute top-full mt-2 w-40 sm:w-48 p-3 bg-secondary dark:bg-dark-secondary rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 left-1/2 -translate-x-1/2">
+            <p className="text-xs sm:text-sm text-secondary-text dark:text-dark-highlight">{badge.description}</p>
         </div>
     </div>
 );

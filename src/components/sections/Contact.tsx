@@ -111,7 +111,7 @@ export const Contact: FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center text-highlight dark:text-white mb-12">
                 Contact
             </h2>
-            <div className="max-w-3xl mx-auto flex flex-col md:flex-row gap-12">
+            <div className="max-w-3xl mx-auto flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12">
                 <div className="flex-1">
                     <h3 className="text-2xl font-bold text-highlight dark:text-white mb-4">Let's Chat!</h3>
                     <p className="text-lg text-secondary-text dark:text-dark-highlight mb-6">
@@ -209,7 +209,7 @@ export const Contact: FC = () => {
                         <motion.button
                             type="submit"
                             disabled={isSubmitting || submitStatus !== null}
-                            className="w-full bg-accent text-white dark:bg-dark-accent dark:text-dark-background font-bold py-3 px-8 rounded-full transition-all duration-300 hover:opacity-90 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                            className="w-full bg-accent text-white dark:bg-dark-accent dark:text-dark-background font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full transition-all duration-300 hover:opacity-90 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
                             whileHover={!(isSubmitting || submitStatus !== null) ? { scale: 1.05 } : {}}
                             whileTap={!(isSubmitting || submitStatus !== null) ? { scale: 0.95 } : {}}
                         >

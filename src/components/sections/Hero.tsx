@@ -8,10 +8,10 @@ export const Hero: FC = () => {
     const cvUrl = import.meta.env.BASE_URL + 'pdf/anchallama-cv.pdf';
 
     return (
-        <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
-            <motion.div style={{ y }} className="w-full flex flex-col items-center justify-center">
+        <section id="hero" className="min-h-[calc(100vh-4rem)] sm:min-h-screen flex flex-col items-start sm:items-center justify-center text-left sm:text-center relative overflow-hidden pt-16 sm:pt-0 px-4 sm:px-0">
+            <motion.div style={{ y }} className="w-full flex flex-col items-start sm:items-center justify-center">
                 <motion.div
-                    className="relative w-40 h-40 md:w-48 md:h-48 mb-6"
+                    className="relative w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
@@ -36,7 +36,7 @@ export const Hero: FC = () => {
                     />
                 </motion.div>
                 <motion.h1
-                    className="text-4xl md:text-6xl font-bold text-highlight dark:text-white mb-2"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-highlight dark:text-white mb-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -44,7 +44,7 @@ export const Hero: FC = () => {
                    Anchal Lama
                 </motion.h1>
                 <motion.p
-                    className="text-lg md:text-2xl text-secondary-text dark:text-dark-highlight mb-8"
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary-text dark:text-dark-highlight mb-8 px-4 sm:px-0"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -60,7 +60,7 @@ export const Hero: FC = () => {
                     <motion.a
                         href={cvUrl}
                         download
-                        className="bg-accent text-white dark:bg-dark-accent dark:text-dark-background font-bold py-3 px-8 rounded-full transition-all duration-300 hover:opacity-90 shadow-lg"
+                        className="bg-accent text-white dark:bg-dark-accent dark:text-dark-background font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full transition-all duration-300 hover:opacity-90 shadow-lg text-sm sm:text-base"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         animate={{
@@ -76,7 +76,7 @@ export const Hero: FC = () => {
                     </motion.a>
                     <motion.a
                         href="#projects"
-                        className="border-2 border-accent text-accent dark:border-dark-accent dark:text-dark-accent font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-accent hover:text-white dark:hover:bg-dark-accent dark:hover:text-dark-background shadow-lg"
+                        className="border-2 border-accent text-accent dark:border-dark-accent dark:text-dark-accent font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full transition-all duration-300 hover:bg-accent hover:text-white dark:hover:bg-dark-accent dark:hover:text-dark-background shadow-lg text-sm sm:text-base"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         animate={{

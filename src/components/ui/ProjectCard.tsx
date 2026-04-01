@@ -50,8 +50,8 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
             }}
             className="bg-secondary/60 dark:bg-dark-secondary/40 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-lg overflow-hidden shadow-lg cursor-pointer h-full flex flex-col"
         >
-            <div style={{ transform: 'translateZ(20px)' }} className="p-6 flex-grow flex flex-col">
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-md mb-4"/>
+            <div style={{ transform: 'translateZ(20px)' }} className="p-3 sm:p-4 md:p-6 flex-grow flex flex-col">
+                <img src={project.image} alt={project.title} className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-md mb-4"/>
                 <motion.h3 
                     className="text-xl font-bold text-highlight dark:text-white mb-2"
                     initial={{ opacity: 0, y: 10 }}
@@ -77,7 +77,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
                             whileHover={{ gap: '10px' }}
                             transition={{ type: 'spring', stiffness: 400 }}
                         >
-                            Acessar Projeto
+                            View Project
                             <ExternalLink size={16} />
                         </motion.a>
                     </div>

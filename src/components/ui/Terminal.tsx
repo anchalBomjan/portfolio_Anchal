@@ -16,7 +16,7 @@ const Kbd: FC<{ children: ReactNode }> = ({ children }) => (
 
 const terminalVariants: Variants = {
     collapsed: {
-        width: 140,
+        width: 'clamp(100px, 35vw, 140px)',
         height: 36,
         y: 0,
         transition: { type: 'spring', stiffness: 400, damping: 30 },
@@ -140,7 +140,7 @@ export const Terminal: FC<TerminalProps> = ({ isExpanded, onToggle }) => {
                                 <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
                                 <span className="w-3 h-3 bg-green-500 rounded-full"></span>
                             </div>
-                            <span className="text-blue-600 dark:text-green-400 text-sm truncate mx-2">aashish@portfolio: ~</span>
+                            <span className="text-blue-600 dark:text-green-400 text-sm truncate mx-2">anchal@portfolio: ~</span>
                             <button onClick={onToggle} className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">
                                 <Minus size={18} />
                             </button>
@@ -152,7 +152,7 @@ export const Terminal: FC<TerminalProps> = ({ isExpanded, onToggle }) => {
                             {history.map((entry, index) => (
                                 <div key={index}>
                                     <div className="flex items-center">
-                                        <span className="text-blue-600 dark:text-green-400">aashish@portfolio:~$</span>
+                                        <span className="text-blue-600 dark:text-green-400">anchal@portfolio:~$</span>
                                         <span className="ml-2 text-highlight dark:text-white">{entry.command}</span>
                                     </div>
                                     <div className="text-blue-600 dark:text-green-400">
@@ -161,7 +161,7 @@ export const Terminal: FC<TerminalProps> = ({ isExpanded, onToggle }) => {
                                 </div>
                             ))}
                             <form onSubmit={handleSubmit} className="flex items-center mt-2">
-                                <span className="text-blue-600 dark:text-green-400">aashish@portfolio:~$</span>
+                                <span className="text-blue-600 dark:text-green-400">anchal@portfolio:~$</span>
                                 <input
                                     ref={inputRef}
                                     type="text"

@@ -8,11 +8,10 @@ export const Education: FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center text-highlight dark:text-white mb-12">
                Academic
             </h2>
-            <div className="max-w-xl mx-auto bg-secondary dark:bg-dark-secondary p-8 rounded-lg shadow-lg flex items-center space-x-6">
+            <div className="max-w-xl mx-auto bg-secondary dark:bg-dark-secondary p-6 sm:p-8 rounded-lg shadow-lg flex flex-col sm:flex-row items-center text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-6">
                 <FaGraduationCap className="text-5xl text-accent dark:text-dark-accent flex-shrink-0" />
                 <div>
-                    <h3 className="text-2xl font-bold text-highlight dark:text-white">Gopalganj Science and Technology University
-</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-highlight dark:text-white">Gopalganj Science and Technology University</h3>
                     <p className="text-secondary-text dark:text-dark-highlight text-lg mt-1">CSIT (2018 - 2023)</p>
                 </div>
             </div>

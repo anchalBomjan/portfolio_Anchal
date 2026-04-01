@@ -67,9 +67,9 @@ const App: FC = () => {
                 }}
             />
              {/* Parallax decorative shapes */}
-            <ParallaxShape yTransform={y1} className="top-0 left-[-5rem]" />
-            <ParallaxShape yTransform={y2} className="top-1/3 right-[-10rem]" />
-            <ParallaxShape yTransform={y3} className="top-2/3 left-[5rem]" />
+            <ParallaxShape yTransform={y1} className="top-0 left-[-2rem] sm:left-[-5rem]" />
+            <ParallaxShape yTransform={y2} className="top-1/3 right-[-4rem] sm:right-[-10rem]" />
+            <ParallaxShape yTransform={y3} className="top-2/3 left-[1rem] sm:left-[5rem]" />
 
             <div className="relative z-10 flex flex-col min-h-screen">
                 <motion.div
