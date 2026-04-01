@@ -4,7 +4,7 @@ import type { FC } from 'react';
 export const Hero: FC = () => {
     const { scrollYProgress } = useScroll();
     const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-    const imageUrl = import.meta.env.BASE_URL + 'images/photo.jpg';
+    const imageUrl = import.meta.env.BASE_URL + 'images/cvanchal.png';
     const cvUrl = import.meta.env.BASE_URL + 'pdf/anchallama-cv.pdf';
 
     return (
