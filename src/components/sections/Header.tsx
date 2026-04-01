@@ -38,7 +38,7 @@ export const Header: FC = () => {
 
     return (
         <motion.header
-            className={`fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden transition-all duration-300 ${scrolled || mobileMenuOpen ? 'bg-background/80 dark:bg-dark-background/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}
+            className={`fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden transition-all duration-300 ${scrolled || mobileMenuOpen ? 'bg-background dark:bg-dark-background shadow-lg' : 'bg-transparent'}`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
