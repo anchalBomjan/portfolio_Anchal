@@ -1,11 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import React from 'react';
+import type { FC } from 'react';
 
-export const Hero: React.FC = () => {
+export const Hero: FC = () => {
     const { scrollYProgress } = useScroll();
     const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-    const imageUrl = import.meta.env.BASE_URL + '/images/photo.jpg';
-    const cvUrl = import.meta.env.BASE_URL + '/pdf/aashishbasyal-cv.pdf';
+    const imageUrl = import.meta.env.BASE_URL + 'images/photo.jpg';
+    const cvUrl = import.meta.env.BASE_URL + 'pdf/anchallama-cv.pdf';
 
     return (
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
                     />
                     <motion.img
                         src={imageUrl}
-                        alt="Aashish Basyal"
+                        alt="Anchal Lama"
                         className="w-full h-full object-cover rounded-full p-1"
                         animate={{
                             scale: [1, 1.05, 1],
@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                   Aashish Basyal
+                   Anchal Lama
                 </motion.h1>
                 <motion.p
                     className="text-lg md:text-2xl text-secondary-text dark:text-dark-highlight mb-8"

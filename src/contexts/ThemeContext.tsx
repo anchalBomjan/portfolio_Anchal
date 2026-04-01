@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, type ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, type FC, type ReactNode, useContext, useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -10,14 +10,12 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // ✅ Default to light mode
+export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null;
     
-    // ✅ If there's a stored theme, use it; otherwise stay with default (light)
     const initialTheme = storedTheme || 'light';
     setTheme(initialTheme);
   }, []);

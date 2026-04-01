@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import type { FC } from 'react';
 import { badges } from '../../../constants';
 import { SectionWrapper } from '../ui/SectionWrapper';
 
-const BadgeCard: React.FC<{ badge: typeof badges[0] }> = ({ badge }) => (
+const BadgeCard: FC<{ badge: typeof badges[0] }> = ({ badge }) => (
     <div className="group relative flex flex-col items-center text-center">
         <motion.div
             className="w-24 h-24 rounded-full bg-secondary dark:bg-dark-secondary flex items-center justify-center transition-all duration-300 group-hover:bg-accent dark:group-hover:bg-dark-accent shadow-md"
@@ -19,7 +19,7 @@ const BadgeCard: React.FC<{ badge: typeof badges[0] }> = ({ badge }) => (
 );
 
 
-export const About: React.FC = () => {
+export const About: FC = () => {
     return (
         <SectionWrapper id="about">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-highlight dark:text-white mb-12">

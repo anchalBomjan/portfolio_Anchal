@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { type FC, type MouseEvent, useEffect, useState } from 'react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
 const navItems = [
@@ -11,7 +11,7 @@ const navItems = [
     { name: 'Contact', href: '#contact' },
 ];
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
                   onClick={(e) => handleNavClick(e, '#hero')}
                   className="text-xl font-bold text-highlight dark:text-dark-highlight hover:text-accent dark:hover:text-dark-accent transition-colors flex items-center"
                 >
-                  <code>&lt;/aashishbasyal&gt;</code>
+                  <code>&lt;/anchallama&gt;</code>
                 </a>
                 <div className="flex items-center space-x-8">
                     <ul className="hidden md:flex space-x-8">

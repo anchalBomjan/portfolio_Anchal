@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { type FC, useState } from 'react';
 import { FaBriefcase, FaColumns, FaStream } from 'react-icons/fa';
 import { experience } from '../../../constants';
 import type { ExperienceItem } from '../../../types';
 import { SectionWrapper } from '../ui/SectionWrapper';
 
 // Componente para evitar repetição de código
-const TimelineItem: React.FC<ExperienceItem> = ({ period, company, description }) => (
+const TimelineItem: FC<ExperienceItem> = ({ period, company, description }) => (
     <>
         <p className="text-accent dark:text-dark-accent font-semibold">{period}</p>
         <h3 className="text-xl font-bold text-highlight dark:text-white mt-1">{company}</h3>
@@ -14,7 +14,7 @@ const TimelineItem: React.FC<ExperienceItem> = ({ period, company, description }
     </>
 );
 
-export const Experience: React.FC = () => {
+export const Experience: FC = () => {
     // Começa com o layout de coluna única (não alternado)
     const [isAlternating, setIsAlternating] = useState(false);
 

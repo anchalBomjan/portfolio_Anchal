@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { Minus } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import { type ChangeEvent, type FC, type FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { projects, skills } from '../../../constants';
 
 interface TerminalProps {
@@ -8,7 +8,7 @@ interface TerminalProps {
     onToggle: () => void;
 }
 
-const Kbd: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const Kbd: FC<{ children: ReactNode }> = ({ children }) => (
     <kbd className="px-1.5 py-0.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-md dark:bg-dark-background dark:text-gray-300 dark:border-gray-700">
         {children}
     </kbd>
@@ -29,7 +29,7 @@ const terminalVariants: Variants = {
     },
 };
 
-const Typewriter: React.FC<{ text: string | string[]; onComplete?: () => void }> = ({ text, onComplete }) => {
+const Typewriter: FC<{ text: string | string[]; onComplete?: () => void }> = ({ text, onComplete }) => {
     const [displayText, setDisplayText] = useState('');
     const fullText = Array.isArray(text) ? text.join('\n') : text;
 
@@ -51,13 +51,13 @@ const Typewriter: React.FC<{ text: string | string[]; onComplete?: () => void }>
     return <span className="whitespace-pre-wrap">{displayText}</span>;
 };
 
-export const Terminal: React.FC<TerminalProps> = ({ isExpanded, onToggle }) => {
+export const Terminal: FC<TerminalProps> = ({ isExpanded, onToggle }) => {
     const [input, setInput] = useState('');
-    const [history, setHistory] = useState<{ command: string; output: React.ReactNode }[]>([]);
+    const [history, setHistory] = useState<{ command: string; output: ReactNode }[]>([]);
     const endOfTerminalRef = useRef<null | HTMLDivElement>(null);
     const inputRef = useRef<null | HTMLInputElement>(null);
 
-    const commands = React.useMemo<{ [key: string]: () => React.ReactNode }>(() => ({
+    const commands = useMemo<{ [key: string]: () => ReactNode }>(() => ({
         help: () =>
             `Available commands:\n- about: Shows a brief description.\n- skills: Lists my technical skills.\n- projects: Displays my main projects.\n- clear: Clears the terminal.\n- exit: Closes the terminal.`,
         about: () => 'Full-Stack Developer with experience in large-scale systems, RESTful APIs, and modernization of legacy systems.',
@@ -86,11 +86,11 @@ export const Terminal: React.FC<TerminalProps> = ({ isExpanded, onToggle }) => {
         endOfTerminalRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [history]);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const command = input.trim().toLowerCase();
         if (!command) return;

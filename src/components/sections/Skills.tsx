@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { type FC, useState } from 'react';
 // FIX: Import Variants from framer-motion to explicitly type animation variants.
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { skills } from '../../../constants';
 import type { Skill } from '../../../types';
 import { SectionWrapper } from '../ui/SectionWrapper';
 
-const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
+const SkillCard: FC<{ skill: Skill }> = ({ skill }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const cardVariants: Variants = {
@@ -70,7 +70,7 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
     );
 };
 
-export const Skills: React.FC = () => {
+export const Skills: FC = () => {
     return (
         <SectionWrapper id="skills">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-highlight dark:text-white mb-16">

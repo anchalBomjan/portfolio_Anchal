@@ -101,41 +101,35 @@ export const skills: Skill[] = [
 ];
 
 export const experience: ExperienceItem[] = [
+
+
+  
   {
-    period: "March 2023 - Present",
+    period: "March 2025 - Present",
     company: "IMARK Pvt Ltd",
     description:
-      "Working as a Software Developer at IMARK Pvt Ltd, a company focused on Fintech and Healthcare domains. Contributed to multiple enterprise-level systems such as IPOS, Bank Portal, TMS, MMS, and Card Support. Experienced in developing scalable web applications using .NET Core, Angular, SQL Server, and Clean Architecture.",
+      "Working as a Software Developer at IMARK Pvt Ltd, a company focused on Fintech (TMS). Experienced in developing scalable web applications using .NET Core, Angular, SQL Server, and Clean Architecture.",
   },
   {
-    period: "Freelance Projects",
-    company: "Personal Development & Freelancing",
+    period: "October 2024 - December 2025",
+    company: "Percoid IT Solution",
     description:
-      "Built and deployed multiple personal and freelance projects using Flutter, .NET, and Angular. Focused on developing cross-platform mobile and web applications with secure APIs, authentication, and real-time communication using SignalR.",
+      "Technical Mastery: Develop full-stack proficiency using .NET Core (backend), Angular (frontend), and SignalR (real-time communication),Database Optimization: Gain practical experience in relational database design, focusing on schema structuring and high-performance SQL query optimization.Software Lifecycle & Workflow: Implement industry best practices using Git for version control and collaborating within a structured project management framework.Problem Solving: Refine the ability to troubleshoot and resolve complex, real-world technical challenges in a production-oriented environment",
   },
   {
     period: "2018 - 2023",
-    company: "New Summit College",
+    company: "GSTU",
     description:
-      "Completed Bachelor's in Computer Science and Information Technology (BSc. CSIT) from Tribhuvan University, developing a strong foundation in programming, databases, and software development principles.",
-  },
+      "Completed Bachelor's in Computer Science and Engineering  from Gopalganj Science and Technology University, developing a strong foundation in programming, databases, and software development principles.",
+  }
+  
+
 ];
 
 export const projects: Project[] = [
+
   {
     id: 1,
-    title: "IPOS & Bank Portal",
-    description:
-      "A centralized system for managing POS devices and bank-related communications.",
-    longDescription:
-      "Developed and optimized systems for managing POS terminals — handling deployment, configuration, and monitoring. The Bank Portal facilitates communication between banks and IMARK for various actions related to POS devices. Improved system efficiency through refactoring and SQL query optimization.",
-    stack: [".NET 6", "Angular", "MS SQL Server", "Clean Architecture"],
-    image: import.meta.env.BASE_URL + "/images/ipos.png",
-    results:
-      "Enhanced system reliability and performance by 40%, reducing support response time significantly.",
-  },
-  {
-    id: 2,
     title: "TMS (Terminal Management System)",
     description:
       "A .NET 6 and Angular-based system enabling secure data transfer between servers and POS terminals.",
@@ -146,32 +140,10 @@ export const projects: Project[] = [
     results:
       "Improved data security and device management reliability by implementing TLS and AES protocols.",
   },
+ 
+
   {
-    id: 3,
-    title: "MMS (Merchant Management System)",
-    description:
-      "A merchant registration and QR code generation system for POS terminals.",
-    longDescription:
-      "Developed a system that enables merchants to register and generate QR codes displayed on their POS terminals for transactions. Includes merchant management, payment tracking, and institutional compliance tools.",
-    stack: [".NET 6", "Angular", "Entity Framework Core", "MS SQL Server"],
-    image: import.meta.env.BASE_URL + "/images/mms.png",
-    results:
-      "Streamlined merchant onboarding, reducing registration time by 60%.",
-  },
-  {
-    id: 4,
-    title: "Card Support System",
-    description:
-      "System to manage card request and printing workflow.",
-    longDescription:
-      "Implemented modules to handle card requests, approvals, and printing directly through the system. Users can track pending and approved card requests and initiate printing seamlessly through the web portal.",
-    stack: [".NET 6", "Angular", "MS SQL Server", "Clean Architecture"],
-    image: import.meta.env.BASE_URL + "/images/card-support.png",
-    results:
-      "Reduced manual intervention in card processing and increased workflow transparency.",
-  },
-  {
-    id: 5,
+    id: 2,
     title: "Flutter Mobile Projects",
     description:
       "Cross-platform apps built using Flutter and .NET backend.",

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ExternalLink, X } from 'lucide-react';
-import React from 'react';
+import type { FC } from 'react';
 import type { Project } from '../../../types';
 
 interface ProjectModalProps {
@@ -9,7 +9,7 @@ interface ProjectModalProps {
     onClose: () => void;
 }
 
-export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+export const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
     if (!project) return null;
 
     return (

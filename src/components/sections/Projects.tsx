@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import React from 'react';
+import type { FC } from 'react';
 import { projects } from '../../../constants';
 import type { Project } from '../../../types';
 import { ProjectCard } from '../ui/ProjectCard';
@@ -10,7 +10,7 @@ interface ProjectsProps {
     onProjectClick: (project: Project) => void;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
+export const Projects: FC<ProjectsProps> = ({ onProjectClick }) => {
     
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -29,7 +29,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
 
     return (
         <SectionWrapper id="projects">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-highlight dark:text-white mb-12">
                 Projects
             </h2>
             <motion.div 

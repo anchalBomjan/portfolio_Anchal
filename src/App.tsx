@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { About } from './components/sections/About';
 import { Contact } from './components/sections/Contact';
 import { Education } from './components/sections/Education';
@@ -15,14 +15,14 @@ import { Terminal } from './components/ui/Terminal';
 import type { MotionValue } from 'framer-motion';
 import type { Project } from '../types';
 
-const ParallaxShape: React.FC<{ yTransform: MotionValue<string>; className?: string }> = ({ yTransform, className }) => (
+const ParallaxShape: FC<{ yTransform: MotionValue<string>; className?: string }> = ({ yTransform, className }) => (
     <motion.div
         className={`absolute w-64 h-64 bg-accent/5 dark:bg-dark-accent/5 rounded-full filter blur-3xl -z-10 transition-colors duration-300 ${className}`}
         style={{ y: yTransform }}
     />
 );
 
-const App: React.FC = () => {
+const App: FC = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isTerminalExpanded, setIsTerminalExpanded] = useState(false);
     const { scrollYProgress } = useScroll();

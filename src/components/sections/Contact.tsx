@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { type ChangeEvent, type FC, type FormEvent, useState } from 'react';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SectionWrapper } from '../ui/SectionWrapper';
@@ -6,16 +6,16 @@ import { SectionWrapper } from '../ui/SectionWrapper';
 const socialLinks = [
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/aashish-basyal-512b161b2/' },
     { icon: FaGithub, href: 'https://github.com/ashimbasyal' },
-    { icon: FaEnvelope, href: 'mailto:ashimbasyal@gmail.com' },
+    { icon: FaEnvelope, href: 'mailto:anchallama079@gmail.com' },
 ];
 
-export const Contact: React.FC = () => {
+export const Contact: FC = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
         if (errors[name as keyof typeof errors]) {
@@ -39,7 +39,7 @@ export const Contact: React.FC = () => {
         return newErrors;
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         const validationErrors = validate();
         setErrors(validationErrors);
@@ -48,28 +48,34 @@ export const Contact: React.FC = () => {
             setIsSubmitting(true);
             setSubmitStatus(null);
 
-            // Simulate API call
-            setTimeout(() => {
-                setIsSubmitting(false);
-                
-                // For demonstration, we'll assume the submission is successful.
-                const isSuccess = true; 
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/anchallama079@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        message: formData.message,
+                        _subject: `Portfolio Contact from ${formData.name}`,
+                    }),
+                });
 
-                if (isSuccess) {
+                if (response.ok) {
                     setSubmitStatus('success');
-                    // After 5 seconds, hide the message and clear the form
                     setTimeout(() => {
                         setSubmitStatus(null);
                         setFormData({ name: '', email: '', message: '' });
                     }, 5000);
                 } else {
                     setSubmitStatus('error');
-                    // After 5 seconds, hide the error message (do not clear the form)
-                    setTimeout(() => {
-                        setSubmitStatus(null);
-                    }, 5000);
+                    setTimeout(() => { setSubmitStatus(null); }, 5000);
                 }
-            }, 1500);
+            } catch {
+                setSubmitStatus('error');
+                setTimeout(() => { setSubmitStatus(null); }, 5000);
+            } finally {
+                setIsSubmitting(false);
+            }
         }
     };
     

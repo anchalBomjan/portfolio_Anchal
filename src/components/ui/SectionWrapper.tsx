@@ -1,14 +1,14 @@
 
 import { motion, useInView } from 'framer-motion';
-import React, { useRef } from 'react';
+import { type FC, type ReactNode, useRef } from 'react';
 
 interface SectionWrapperProps {
-    children: React.ReactNode;
+    children: ReactNode;
     id: string;
     className?: string;
 }
 
-export const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, id, className = '' }) => {
+export const SectionWrapper: FC<SectionWrapperProps> = ({ children, id, className = '' }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
 

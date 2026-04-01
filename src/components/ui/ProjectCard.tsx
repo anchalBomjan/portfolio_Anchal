@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import React, { useRef } from 'react';
+import { type FC, type MouseEvent, useRef } from 'react';
 import type { Project } from '../../../types';
 
 interface ProjectCardProps {
@@ -8,7 +8,7 @@ interface ProjectCardProps {
     onClick: () => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+export const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
     const ref = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -19,7 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['10deg', '-10deg']);
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-10deg', '10deg']);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const handleMouseMove = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
         if (!ref.current) return;
         const rect = ref.current.getBoundingClientRect();
         const width = rect.width;

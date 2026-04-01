@@ -1,6 +1,6 @@
 # 🎯 Modern and Animated Portfolio – Aashish Basyal
 
-💻 **GitHub Repository:** [https://github.com/ashimbasyal/portfolio](https://github.com/ashimbasyal/portfolio)
+💻 **GitHub Repository:** [https://github.com/anchalBomjan/portfolio_Anchal]
 
 ---
 
@@ -85,7 +85,7 @@ To run this project on your local machine:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/ashimbasyal/portfolio.git
+   git clone https://github.com/anchalBomjan/portfolio_Anchal.git
    ```
 
 2. **Navigate into the project directory:**
