@@ -4,8 +4,8 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SectionWrapper } from '../ui/SectionWrapper';
 
 const socialLinks = [
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/aashish-basyal-512b161b2/' },
-    { icon: FaGithub, href: 'https://github.com/ashimbasyal' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/anchal-lama-17cse072/' },
+    { icon: FaGithub, href: 'https://github.com/anchalBomjan' },
     { icon: FaEnvelope, href: 'mailto:anchallama079@gmail.com' },
 ];
 
