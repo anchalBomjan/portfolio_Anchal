@@ -51,14 +51,14 @@ export const Header: FC = () => {
                 >
                   <code>&lt;/anchallama&gt;</code>
                 </a>
-                <div className="flex items-center gap-2 sm:gap-4 md:gap-8 shrink-0">
-                    <ul className="hidden md:flex space-x-8">
+                <div className="flex items-center gap-2 sm:gap-4 md:gap-6 shrink-0">
+                    <ul className="hidden md:flex items-center space-x-3">
                         {navItems.map((item) => (
                             <li key={item.name}>
                                 <a
                                     href={item.href}
                                     onClick={(e) => handleNavClick(e, item.href)}
-                                    className="text-highlight dark:text-dark-highlight hover:text-accent dark:hover:text-dark-accent transition-colors font-medium"
+                                    className="rounded-full border border-transparent bg-secondary/80 px-4 py-2 text-sm font-medium text-highlight dark:bg-dark-secondary/80 dark:text-dark-highlight hover:border-accent hover:bg-accent/10 dark:hover:border-dark-accent dark:hover:bg-dark-accent/10 transition-colors duration-200"
                                 >
                                     {item.name}
                                 </a>
@@ -67,8 +67,9 @@ export const Header: FC = () => {
                     </ul>
                     <ThemeToggle />
                     <button
+                        type="button"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
+                        className="md:hidden relative z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-secondary/90 p-2 text-highlight shadow-lg transition-colors duration-200 hover:bg-secondary dark:border-white/10 dark:bg-dark-secondary/90 dark:text-dark-highlight dark:hover:bg-dark-secondary pointer-events-auto"
                         aria-label="Toggle menu"
                     >
                         <motion.span
@@ -92,19 +93,19 @@ export const Header: FC = () => {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="md:hidden overflow-hidden bg-background/95 dark:bg-dark-background/95 backdrop-blur-sm"
+                        className="md:hidden fixed inset-x-0 top-16 z-50 pointer-events-auto overflow-auto bg-background/95 dark:bg-dark-background/95 backdrop-blur-xl shadow-2xl border-t border-gray-200/70 dark:border-white/10"
                     >
-                        <ul className="flex flex-col items-center py-4 space-y-4">
+                        <ul className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] px-6 py-10 gap-5">
                             {navItems.map((item) => (
-                                <li key={item.name}>
+                                <li key={item.name} className="w-full max-w-sm">
                                     <a
                                         href={item.href}
                                         onClick={(e) => handleNavClick(e, item.href)}
-                                        className="text-lg text-highlight dark:text-dark-highlight hover:text-accent dark:hover:text-dark-accent transition-colors font-medium"
+                                        className="block w-full rounded-full px-5 py-4 text-center text-lg font-semibold text-highlight dark:text-dark-highlight transition-colors duration-200 hover:bg-accent/10 dark:hover:bg-dark-accent/10"
                                     >
                                         {item.name}
                                     </a>
