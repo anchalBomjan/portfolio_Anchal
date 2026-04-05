@@ -8,8 +8,8 @@ export const Hero: FC = () => {
     const cvUrl = import.meta.env.BASE_URL + 'pdf/anchallama-cv.pdf';
 
     return (
-        <section id="hero" className="min-h-[calc(100vh-4rem)] sm:min-h-screen flex flex-col items-start sm:items-center justify-center text-left sm:text-center relative overflow-hidden pt-16 sm:pt-0 px-4 sm:px-0">
-            <motion.div style={{ y }} className="w-full flex flex-col items-start sm:items-center justify-center">
+        <section id="hero" className="min-h-[calc(100vh-4rem)] sm:min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden pt-16 sm:pt-0 px-4 sm:px-0">
+            <motion.div style={{ y }} className="w-full flex flex-col items-center justify-center">
                 <motion.div
                     className="relative w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6"
                     initial={{ scale: 0 }}
